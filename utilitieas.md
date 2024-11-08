@@ -13,5 +13,7 @@ NeonDB
 Tailwind CCS
 Shadcn UI
 Clerk - Authentication
+Husky
+lint-staged
 
 1:03:31
