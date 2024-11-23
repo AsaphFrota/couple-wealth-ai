@@ -43,8 +43,8 @@ enum TransactionCategory {
 
 enum TransactionPaymentMethod {
   CREDIT_CARD
-  DEBID_CARD
-  bANK_TRANSFER
+  DEBIT_CARD
+  BANK_TRANSFER
   BANK_SLIP
   CASH
   PIX
