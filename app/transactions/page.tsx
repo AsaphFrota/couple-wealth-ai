@@ -1,13 +1,10 @@
+import AddTransactionButton from "../_components/add-transaction-button";
 import { db } from "../_lib/prisma";
-import { Transaction } from "@prisma/client";
-
+import { DataTable } from "../_components/ui/data-table";
 import { transactionColumns } from "./_columns";
-import AddTransactionButton from "../_component/add-transactions-button";
-import { DataTable } from "../_lib/ui/data-table";
-
-const transactons: Transaction[] = await db.transaction.findMany();
 
 const TransactionsPage = async () => {
+  const transactions = await db.transaction.findMany({});
   return (
     <div className="space-y-6 p-6">
       {/* TÍTULO E BOTÃO */}
@@ -15,7 +12,7 @@ const TransactionsPage = async () => {
         <h1 className="text-2xl font-bold">Transações</h1>
         <AddTransactionButton />
       </div>
-      <DataTable columns={transactionColumns} data={transactons} />
+      <DataTable columns={transactionColumns} data={transactions} />
     </div>
   );
 };
