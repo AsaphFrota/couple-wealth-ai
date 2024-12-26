@@ -41,14 +41,20 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { upsertTransaction } from "../_actions/upsert-transaction";
+<<<<<<< HEAD
 
+=======
+>>>>>>> dddce42 (feat: add navbar component)
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
   defaultValues?: FormSchema;
   transactionId?: string;
   setIsOpen: (isOpen: boolean) => void;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dddce42 (feat: add navbar component)
 const formSchema = z.object({
   name: z.string().trim().min(1, {
     message: "O nome é obrigatório.",
@@ -73,9 +79,13 @@ const formSchema = z.object({
     required_error: "A data é obrigatória.",
   }),
 });
+<<<<<<< HEAD
 
 type FormSchema = z.infer<typeof formSchema>;
 
+=======
+type FormSchema = z.infer<typeof formSchema>;
+>>>>>>> dddce42 (feat: add navbar component)
 const UpsertTransactionDialog = ({
   isOpen,
   defaultValues,
@@ -93,7 +103,10 @@ const UpsertTransactionDialog = ({
       type: TransactionType.EXPENSE,
     },
   });
+<<<<<<< HEAD
 
+=======
+>>>>>>> dddce42 (feat: add navbar component)
   const onSubmit = async (data: FormSchema) => {
     try {
       await upsertTransaction({ ...data, id: transactionId });
@@ -103,9 +116,13 @@ const UpsertTransactionDialog = ({
       console.error(error);
     }
   };
+<<<<<<< HEAD
 
   const isUpdate = Boolean(transactionId);
 
+=======
+  const isUpdate = Boolean(transactionId);
+>>>>>>> dddce42 (feat: add navbar component)
   return (
     <Dialog
       open={isOpen}
@@ -124,7 +141,10 @@ const UpsertTransactionDialog = ({
           </DialogTitle>
           <DialogDescription>Insira as informações abaixo</DialogDescription>
         </DialogHeader>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dddce42 (feat: add navbar component)
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -269,5 +289,8 @@ const UpsertTransactionDialog = ({
     </Dialog>
   );
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> dddce42 (feat: add navbar component)
 export default UpsertTransactionDialog;

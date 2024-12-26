@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Button } from "../_components/ui/button";
 
 const SubscriptionPage = () => {
@@ -26,4 +27,12 @@ const SubscriptionPage = () => {
     </div>
   );
 };
+=======
+import CwNavbar from "../_components/cw-navbar";
+
+const SubscriptionPage = () => {
+  return <CwNavbar />;
+};
+
+>>>>>>> dddce42 (feat: add navbar component)
 export default SubscriptionPage;
