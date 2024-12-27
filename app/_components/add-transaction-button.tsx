@@ -11,11 +11,7 @@ const AddTransactionButton = () => {
   return (
     <>
       <Button
-<<<<<<< HEAD
         className="rounded-full font-bold shadow-md"
-=======
-        className="rounded-full font-bold shadow-md "
->>>>>>> dddce42 (feat: add navbar component)
         onClick={() => setDialogIsOpen(true)}
       >
         Adicionar transação
