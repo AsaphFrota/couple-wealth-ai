@@ -47,7 +47,7 @@ const CwNavbar = () => {
               : "text-muted-foreground inline-flex items-center gap-1"
           }
         >
-          Diagnóstico <HiSparkles className="h-5 w-5" />
+          Diagnóstico <HiSparkles />
         </Link>
         <Link
           href="/subscription"
