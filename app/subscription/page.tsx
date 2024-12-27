@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Button } from "../_components/ui/button";
 
 const SubscriptionPage = () => {
@@ -28,9 +29,16 @@ const SubscriptionPage = () => {
   );
 };
 =======
+=======
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+>>>>>>> 54cdbee (feat: ensure transactions and subscriptions pages are protected)
 import CwNavbar from "../_components/cw-navbar";
-
-const SubscriptionPage = () => {
+const SubscriptionPage = async () => {
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/login");
+  }
   return <CwNavbar />;
 };
 

@@ -5,10 +5,23 @@ import { transactionColumns } from "./_columns";
 <<<<<<< HEAD
 =======
 import CwNavbar from "../_components/cw-navbar";
+<<<<<<< HEAD
 >>>>>>> dddce42 (feat: add navbar component)
+=======
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+>>>>>>> 54cdbee (feat: ensure transactions and subscriptions pages are protected)
 
 const TransactionsPage = async () => {
-  const transactions = await db.transaction.findMany({});
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/login");
+  }
+  const transactions = await db.transaction.findMany({
+    where: {
+      userId,
+    },
+  });
   return (
 <<<<<<< HEAD
     <div className="space-y-6 p-6">
